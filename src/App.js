@@ -46,7 +46,7 @@ function App() {
   const calculate = (e) => {
         setResult(cal(calc))
   }
-  console.log("APP RENDERED")
+  
   return (
     <div className="App">
         <div className="container">

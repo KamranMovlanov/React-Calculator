@@ -2,7 +2,6 @@ import React from 'react'
 import s from './calcScreen.module.css';
 
 const CalcScreen = (props) => {
-    console.log("Calc rendered", props.calc)
     return (
         <div>
             <div>
