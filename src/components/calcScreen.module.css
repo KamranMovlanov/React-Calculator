@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 96%;
+    min-width: 320px;
     border-radius: 8px;
     position: relative;
     min-height: 105px;
@@ -11,8 +11,9 @@
     font-family: monospace;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    white-space: pre-wrap;
     hyphens: auto;
-    font-size: 60px;
+    font-size: 3.5vw;
     font-weight: 600;
     padding: 7px;
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
@@ -21,6 +22,17 @@
     transition: 0.25s;
 }
 
+
+span:not(.sticky) {
+    height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+span.sticky {
+    display: inline-block;
+    width: 20%;
+}
 
 .screenInputMin {
     display: flex;
@@ -35,8 +47,10 @@
     font-family: monospace;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    white-space: pre-wrap;
     hyphens: auto;
-    font-size: 35px;
+    /* font-size: 30px; */
+    font-size: 2vw;
     font-weight: 600;
     padding: 7px;
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
@@ -56,10 +70,13 @@
     background-color: #b0b0b0c8;
     color: rgba(47, 47, 47, 0.8);
     font-family: monospace;
-    font-size: 25px;
+    /* font-size: 22px; */
+    font-size: 1vw;
     font-weight: 700;
     word-wrap: break-word;
     word-break: break-all;
+    white-space: pre-wrap;
+    overflow: hidden;
     hyphens: auto;
     padding: 7px;
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
