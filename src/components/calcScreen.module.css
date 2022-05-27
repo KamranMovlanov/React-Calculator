@@ -13,7 +13,8 @@
     overflow-wrap: break-word;
     white-space: pre-wrap;
     hyphens: auto;
-    font-size: 3.5vw;
+    overflow: hidden;
+    font-size: 45px;
     font-weight: 600;
     padding: 7px;
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
@@ -23,16 +24,7 @@
 }
 
 
-span:not(.sticky) {
-    height: 1em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
-span.sticky {
-    display: inline-block;
-    width: 20%;
-}
 
 .screenInputMin {
     display: flex;
@@ -49,8 +41,8 @@ span.sticky {
     word-wrap: break-word;
     white-space: pre-wrap;
     hyphens: auto;
-    /* font-size: 30px; */
-    font-size: 2vw;
+    overflow: hidden;
+    font-size: 2em;
     font-weight: 600;
     padding: 7px;
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
@@ -70,12 +62,12 @@ span.sticky {
     background-color: #b0b0b0c8;
     color: rgba(47, 47, 47, 0.8);
     font-family: monospace;
-    /* font-size: 22px; */
-    font-size: 1vw;
+    font-size: 22px;
     font-weight: 700;
     word-wrap: break-word;
     word-break: break-all;
     white-space: pre-wrap;
+    overflow-wrap: break-word;
     overflow: hidden;
     hyphens: auto;
     padding: 7px;
@@ -83,6 +75,17 @@ span.sticky {
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
     transition: 0.25s;
+}
+
+span:not(.sticky) {
+    height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+span.sticky {
+    display: inline-block;
+    width: 20%;
 }
 
 .screenInput:hover,
