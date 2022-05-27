@@ -1,6 +1,12 @@
 .screenInput {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     min-width: 96%;
     border-radius: 8px;
@@ -12,11 +18,14 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: pre-wrap;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
     overflow: hidden;
     font-size: 45px;
     font-weight: 600;
     padding: 7px;
+    -webkit-box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -27,8 +36,14 @@
 
 
 .screenInputMin {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 96%;
     border-radius: 8px;
@@ -40,11 +55,14 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     white-space: pre-wrap;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
     overflow: hidden;
     font-size: 2em;
     font-weight: 600;
     padding: 7px;
+    -webkit-box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -52,8 +70,14 @@
 }
 
 .screenInputSuperMin {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 96%;
     border-radius: 8px;
@@ -69,8 +93,11 @@
     white-space: pre-wrap;
     overflow-wrap: break-word;
     overflow: hidden;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
     padding: 7px;
+    -webkit-box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
     box-shadow: inset 0px 5px 8px 1px rgba(14, 14, 14, 0.83);
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -80,6 +107,7 @@
 span:not(.sticky) {
     height: 1em;
     overflow: hidden;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
 

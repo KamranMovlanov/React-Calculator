@@ -47,7 +47,7 @@ function App() {
         setResult(cal(calc))
   }
   
-  return (
+return (
     <div className="App">
         <div className="container">
 
