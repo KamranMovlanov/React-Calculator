@@ -36,9 +36,18 @@ function App() {
       
       setCalc(calc + value) 
 
-      if (!ops.includes(value) && value === '=') { 
-        
+      if (!ops.includes(value) || value === '=') { 
           setResult(cal(calc + value)) 
+      }
+
+      if (ops.includes(value.slice(-1))) {
+        setResult(cal(value.slice(0,-1)));  
+      }
+  
+      else{
+  
+        setResult(cal(value));  
+  
       }
 
   }
