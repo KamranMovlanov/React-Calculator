@@ -1,20 +1,20 @@
 import './App.css';
 import style from "./components/ButtonBox.module.css"
 import CalcScreen from './components/CalcScreen';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  
+
   const [calc, setCalc] = useState("")
   const [result, setResult] = useState("")
 
   const ops = ['/', '*', '+', '-', '.']
   const btnValues = [
     ["C", "+-", "%", "/"],
-    [7, 8, 9, "*"],
-    [4, 5, 6, "-"],
-    [1, 2, 3, "+"],
-    [0, "."],
+    ['7', '8', '9', "*"],
+    ['4', '5', '6', "-"],
+    ['1', '2', '3', "+"],
+    ['0', "."],
   ];
 
   const clean = () => {
@@ -28,52 +28,53 @@ function App() {
 
 
   const updateCalc = (value) => {
-    
-      if (
-          (ops.includes(value) && calc === '') || 
-          (ops.includes(value) && ops.includes(calc.slice(-1))) 
-      ) { return } 
-      
-      setCalc(calc + value) 
 
-      if (!ops.includes(value) || value === '=') { 
-          setResult(cal(calc + value)) 
-      }
+    if (
+      (ops.includes(value) && calc === '') ||
+      (ops.includes(value) && ops.includes(calc.slice(-1)))
+    ) { return }
 
-      if (ops.includes(value.slice(-1))) {
-        setResult(cal(value.slice(0,-1)));  
-      }
-  
-      else{
-  
-        setResult(cal(value));  
-  
-      }
+    setCalc(calc + value)
+
+    if (!ops.includes(value) || value === '=') {
+      setResult(cal(calc + value))
+    }
+
+    if (ops.includes(value.slice(-1))) {
+      setResult(cal(value.slice(0, -1)));
+    }
+
+    else {
+
+      setResult(cal(value));
+
+    }
 
   }
 
   const calculate = (e) => {
-        setResult(cal(calc))
+    setResult(cal(calc))
   }
-  
-return (
+
+  return (
     <div className="App">
-        <div className="container">
+      <div className="container">
 
-            <CalcScreen result={result} calc={calc}/>
+        <CalcScreen result={result} calc={calc} />
 
-            <div className={style.wrapper}>
-            
-            <div className={style.buttons}>
+        <div className={style.wrapper}>
+
+          <div className={style.buttons}>
             {
-            btnValues.flat().map((btn, i) => {
-            return (
-              <button className={style.button}
-                type="button" key={i} onClick={btn === "C" ? clean : () => updateCalc(btn)}>{btn}</button>)})}
+              btnValues.flat().map((btn, i) => {
+                return (
+                  <button className={style.button}
+                    type="button" key={i} onClick={btn === "C" ? clean : () => updateCalc(btn)}>{btn}</button>)
+              })}
             <button type="button" className={style.buttonEqual} onClick={calculate}>=</button>
-            </div>
+          </div>
         </div >
-        </div>  
+      </div>
     </div>
   );
 }
