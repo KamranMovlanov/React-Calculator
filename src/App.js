@@ -4,13 +4,13 @@ import CalcScreen from './components/CalcScreen';
 import React, { useState } from 'react';
 
 function App() {
-
   const [calc, setCalc] = useState("")
   const [result, setResult] = useState("")
+  const [finalResult, setFinalResult] = useState("")
 
   const ops = ['/', '*', '+', '-', '.']
   const btnValues = [
-    ["C", "+-", "%", "/"],
+    ["Del", "+-", "%", "/"],
     ['7', '8', '9', "*"],
     ['4', '5', '6', "-"],
     ['1', '2', '3', "+"],
@@ -20,15 +20,14 @@ function App() {
   const clean = () => {
     setCalc('')
     setResult('')
+    setFinalResult('')
   }
 
   const cal = (fn) => {
     return new Function('return ' + fn)();
   }
 
-
   const updateCalc = (value) => {
-
     if (
       (ops.includes(value) && calc === '') ||
       (ops.includes(value) && ops.includes(calc.slice(-1)))
@@ -39,28 +38,18 @@ function App() {
     if (!ops.includes(value) || value === '=') {
       setResult(cal(calc + value))
     }
-
-    if (ops.includes(value.slice(-1))) {
-      setResult(cal(value.slice(0, -1)));
-    }
-
-    else {
-
-      setResult(cal(value));
-
-    }
-
   }
 
-  const calculate = (e) => {
+  const calculate = () => {
     setResult(cal(calc))
+    setFinalResult(cal(calc))
   }
 
   return (
     <div className="App">
       <div className="container">
 
-        <CalcScreen result={result} calc={calc} />
+        <CalcScreen result={result} calc={calc} finalResult={finalResult} setFinalResult={setFinalResult} />
 
         <div className={style.wrapper}>
 
@@ -69,7 +58,7 @@ function App() {
               btnValues.flat().map((btn, i) => {
                 return (
                   <button className={style.button}
-                    type="button" key={i} onClick={btn === "C" ? clean : () => updateCalc(btn)}>{btn}</button>)
+                    type="button" key={i} onClick={btn === "Del" ? clean : () => updateCalc(btn)}>{btn}</button>)
               })}
             <button type="button" className={style.buttonEqual} onClick={calculate}>=</button>
           </div>
